@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home page</title>
+</head>
+
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: left;    
+    }
+ </style>
+
+<body>
+    <h1>
+        Equipments list
+    </h1>
+    {% if equipments_list %}
+    <table style="width:100%">
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Sport</th>
+            <th>Image</th>
+            <th>Issue</th>
+          </tr>
+      {% for equi in equipments_list %}
+      <tr>
+        <td>{{equi.name}}</td>
+        <td>{{equi.quantity}}</td>
+        <td>{{equi.sport}}</td>
+
+        <td><a href="{{ equi.Image.url }}"> Image</a></td>
+        <td><a href=''><button>Issue</button></a></td>
+      </tr>
+    {% endfor %}
+</table>
+  {% else %}
+    <p>There are no equipments </p>
+  {% endif %} 
+</body>
+</html>
