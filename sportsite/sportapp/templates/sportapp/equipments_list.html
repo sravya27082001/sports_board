@@ -35,7 +35,8 @@
         <td>{{equi.quantity}}</td>
         <td>{{equi.sport}}</td>
 
-        <td><a href="{{ equi.Image.url }}"> Image</a></td>
+ <td><img class="rounded-circle account-img"  src="{{ equi.Image.url  }}" width="100" height="100" >
+</td>
         <td><a href=''><button>Issue</button></a></td>
       </tr>
     {% endfor %}
